@@ -9,13 +9,13 @@ app = Flask(__name__)
 
 
 def page_not_found(error):
-    return "<h1>Pagina no encontrada</h1>", 404
+    return {"mensaje": "Pagina no encontrada"}, 404
 
 
 if __name__ == "__main__":
     app.config.from_object(config["development"])
     # Bluteprints
-    app.register_blueprint(Sales.main, url_prefix="/api/sales")
+    app.register_blueprint(Sales.main, url_prefix="/api/v1/")
     # Error handlers
     app.register_error_handler(404, page_not_found)
     app.run()

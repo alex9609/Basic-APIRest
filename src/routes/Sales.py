@@ -6,7 +6,7 @@ main = Blueprint("sales_blueprint", __name__)
 from models.SalesModel import SalesModel
 
 
-@main.route("/")
+@main.route("/sales")
 def get_sales():
     try:
         sales = SalesModel.get__history_sales()

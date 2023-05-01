@@ -133,7 +133,7 @@ INSERT INTO detalle_factura (factura_id, producto_id, cantidad, subtotal) VALUES
   (12,5,1,79.99),
   (12,6,1,199.99);
 
-SELECT c.correo, p.nombre AS nombre_producto, df.cantidad, df.subtotal, f.fecha, f.total, f.id
+SELECT c.nombre ,c.correo, p.nombre AS nombre_producto, df.cantidad, df.subtotal, f.fecha, f.total, f.id
 FROM cliente c
 JOIN factura f ON c.id = f.cliente_id
 JOIN detalle_factura df ON f.id= df.factura_id
